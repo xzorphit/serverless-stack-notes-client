@@ -1,4 +1,13 @@
 .App {
+  margin-top: 15px;
+}
+
+.App .navbar-brand {
+  font-weight: bold;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -36,3 +45,4 @@
     transform: rotate(360deg);
   }
 }
+ */
