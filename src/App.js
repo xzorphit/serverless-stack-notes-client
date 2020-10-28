@@ -6,6 +6,7 @@ import "./App.css";
 import Routes from "./Routes";
 import { AppContext } from "./libs/contextLib";
 import { Auth } from "aws-amplify";
+import { onError } from "./libs/errorLib"; 
 
 function App() {
   const history = useHistory();
@@ -23,7 +24,7 @@ function App() {
     }
     catch(e) {
       if (e !== 'No current user') {
-        alert(e);
+        onError(e);
       }
     }
   
@@ -34,7 +35,7 @@ async function handleLogout() {
   await Auth.signOut();
 
   userHasAuthenticated(false);
-  
+
   history.push("/login")
   }  
   return (
